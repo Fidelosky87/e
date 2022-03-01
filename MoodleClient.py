@@ -52,7 +52,7 @@ class MoodleClient(object):
             self.userdata = self.getUserData()
             return True
 
-    def upload_file(self,file,saved = True):
+    def upload_file(self,file,saved = False):
         fileurl = self.path+'user/files.php'
         resp = self.session.get(fileurl)
         print('Resp: '+str(resp))
