@@ -53,7 +53,7 @@ class MoodleClient(object):
             return True
 
     def upload_file(self,file,saved = False):
-        fileurl = self.path+'user/files.php'
+        fileurl = self.path+'admin/tool/lp/user_evidence_edit.php'
         resp = self.session.get(fileurl)
         print('Resp: '+str(resp))
         soup = BeautifulSoup(resp.text,'html.parser')
