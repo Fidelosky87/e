@@ -110,6 +110,7 @@ class MoodleClient(object):
         data['userdata'] = self.userdata
         ffname = str(str(data['url']).split('/')[-1]).replace('?forcedownload=1','')
         #data['directurl'] = str(data['url']).replace('draftfile.php','webservice/draftfile.php')+'?token='+data['userdata']['token']
+        data['directurl'] = data['url']        
         return data
 
     def parsejson(self,json):
