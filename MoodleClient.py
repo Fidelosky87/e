@@ -53,7 +53,7 @@ class MoodleClient(object):
             return True
 
     def upload_file(self,file,saved = False):
-        fileurl = self.path+'admin/tool/lp/user_evidence_edit.php'
+        fileurl = self.path+'user/files.php'
         resp = self.session.get(fileurl)
         print('Resp: '+str(resp))
         soup = BeautifulSoup(resp.text,'html.parser')
@@ -77,8 +77,8 @@ class MoodleClient(object):
             'repo_upload_file':(file,of,'application/octet-stream'),
             }
         upload_data = {
-            'title':(None,''),
-            'author':(None,'ObysoftDev'),
+            'title':(None,'a'),
+            'author':(None,'Juan Juan'),
             'license':(None,'allrightsreserved'),
             'itemid':(None,query['itemid']),
             'repo_id':(None,4),
@@ -110,7 +110,6 @@ class MoodleClient(object):
         data['userdata'] = self.userdata
         ffname = str(str(data['url']).split('/')[-1]).replace('?forcedownload=1','')
         #data['directurl'] = str(data['url']).replace('draftfile.php','webservice/draftfile.php')+'?token='+data['userdata']['token']
-        data['directurl'] = data['url']
         return data
 
     def parsejson(self,json):
