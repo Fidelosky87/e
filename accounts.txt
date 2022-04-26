@@ -1,3 +1,0 @@
-{'username':'joker','password':'Fredi@87'}
-{'username':'obysoftdev','password':'Obysoft2001@'}
-{'username':'obysoft2001','password':'Obysoft2001@'}
